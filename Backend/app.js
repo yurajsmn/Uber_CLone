@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const userRoutes = require("./routes/user.routes");
+const captainRoutes=require('../Backend/routes/captain.routes')
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -12,4 +13,5 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use("/users", userRoutes);
+app.use('/captains',captainRoutes);
 module.exports = app;
